@@ -1,0 +1,19 @@
+<h3>@Title</h3>
+
+<p role="status">Current Total: @_currentTotal</p>
+<p>Increment amount: <input @bind="IncrementAmount"/></p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click to Increment</button>
+
+@code {
+    private int _currentTotal = 1;
+    private int IncrementAmount { get; set; } = 1;
+    
+    [Parameter] public string Title { get; set; } = "Blazor Counter Component";
+
+    private void IncrementCount()
+    {
+        _currentTotal += IncrementAmount;
+    }
+
+
+}
